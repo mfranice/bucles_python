@@ -15,4 +15,9 @@
 numeros = [1, 5, -1, 6, 10, 2, -5]
 suma = 0   # Variable ya inicializada, la suma arranca en cero
 
+for i in range (len(numeros)):
+    suma = suma + numeros[i]
+    print(suma)
+
+print ('La sumatoria total es:', suma)
 print("terminamos!")

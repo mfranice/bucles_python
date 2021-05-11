@@ -16,11 +16,16 @@
 # Tener en cuenta que "range" no incluye el número de "fin" en su secuencia,
 # sino que va hasta el anterior
 
-inicio = int(input('Ingrese el primero número de la secuencia\n'))
+inicio = int(input('Ingrese el primer número de la secuencia\n'))
 # fin....
-
+fin = int(input('Ingrese el número final de la secuencia\n'))
 # for ... in range(....)
-
+suma = 0
+for i in range (inicio, fin + 1):
+    print ('Vuelta numero', (i - inicio + 1), 'del bucle')
+    print ('Número de la secuencia:', i)
+    suma = suma + i
+    print ('Suma parcial', suma)
 # Imprimir el valor de la sumatoria
-
+print ('El total de la sumatoria es:', suma)
 print("terminamos!")
