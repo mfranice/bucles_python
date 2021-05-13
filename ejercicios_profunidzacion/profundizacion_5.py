@@ -19,7 +19,7 @@ Tome el ejercicio:
 copielo a este ejercicio y modifíquelo para cumplir
 el siguiente requerimiento
 
-Realize un programa que corra indefinidamente en un bucle, al comienzo de la
+Realice un programa que corra indefinidamente en un bucle, al comienzo de la
 iteración del bucle el programa consultará al usuario con el siguiente menú:
 1 - Obtener la palabra más grande por orden alfabético (usando el operador ">")
 2 - Obtener la palabra más grande por cantidad de letras (longitud de la palabra)
@@ -78,3 +78,58 @@ hacer un bosquejo del sistema ya que deberá utilizar 3 bucles en total,
 
 print("Mi primer pasito en data analytics")
 # Empezar aquí la resolución del ejercicio
+
+while True:
+
+    print('Ingrese 1 si desea obtener la palabra más grande orden alfabético')
+    print('Ingrese 2 si desea obtener la palabra más larga por cantidad de letras')
+    print('Ingrese 3 si desa finalizar el programa')
+
+    opcion_aux = input()   
+    
+    try:
+        opcion = int(opcion_aux)
+    except:
+        opcion = 4
+
+    lista_palabras = []
+    mayor_palabra = None
+    mayor_palabra_len = None
+
+    if opcion == 1:
+        
+        print('Ingrese la cantidad de palabras que desea evaluar:')
+        cantidad_palabras = int(input())
+
+        for i in range (0 , cantidad_palabras):
+            print('Ingrese la palabra', i+1)
+            lista_palabras.append(str(input()))    
+        
+        for palabra in lista_palabras:
+            if (mayor_palabra == None) or (mayor_palabra < palabra):
+                mayor_palabra = palabra
+
+        print('La palabra más grande alfabéticamente es:', mayor_palabra)
+
+    elif opcion == 2:
+
+        print('Ingrese la cantidad de palabras que desea evaluar:')
+        cantidad_palabras = int(input())
+
+        for i in range (0 , cantidad_palabras):
+            print('Ingrese la palabra', i+1)
+            lista_palabras.append(str(input()))        
+        
+        for palabra in lista_palabras:
+            if (mayor_palabra == None) or (len(mayor_palabra) < len(palabra)):
+                mayor_palabra_len = palabra
+
+        print('La palabra más larga es:', mayor_palabra_len)
+
+    elif opcion == 3:
+        break
+
+    else:
+        print('La opción ingresada no es válida, por favor ingrese una de las opciones listadas en el menú')
+
+
